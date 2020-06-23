@@ -994,10 +994,12 @@ public final class StandardPBEByteEncryptor implements PBEByteCleanablePasswordE
             // The problem could be not having the unlimited strength policies
             // installed, so better give a usefull error message.
             handleInvalidKeyException(e);
+            System.out.print("Error: " + e.toString());
             throw new EncryptionOperationNotPossibleException();
         } catch (final Exception e) {
             // If encryption fails, it is more secure not to return any 
             // information about the cause in nested exceptions. Simply fail.
+        	System.out.print("Error: " + e.toString());
             throw new EncryptionOperationNotPossibleException();
         }
         
@@ -1162,10 +1164,12 @@ public final class StandardPBEByteEncryptor implements PBEByteCleanablePasswordE
             // The problem could be not having the unlimited strength policies
             // installed, so better give a usefull error message.
             handleInvalidKeyException(e);
+            System.out.print("Error: " + e.toString());
             throw new EncryptionOperationNotPossibleException();
         } catch (final Exception e) {
             // If decryption fails, it is more secure not to return any 
             // information about the cause in nested exceptions. Simply fail.
+        	System.out.print("Error: " + e.toString());
             throw new EncryptionOperationNotPossibleException();
         }
         
